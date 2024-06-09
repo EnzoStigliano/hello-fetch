@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // fetch() es el método nativo de los navegadores para hacer peticiones AJAX
   // se usa con promesas ya que es asíncrono
   function fetchData() {
-    fetch('hello-database-production.up.railway.app/api/users')
+    fetch('http://hello-database-production.up.railway.app/api/users')
       .then(res => res.json())
       .then(users => {
         populateTable(users);
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let id = document.getElementById('userID').value;
     // si el id no es un numero terminamos
     if (isNaN(id)) return;
-    fetch(`hello-database-production.up.railway.app/api/user/${id}`)
+    fetch(`http://hello-database-production.up.railway.app/api/user/${id}`)
       .then(res => res.json())
       .then(user => {
         let users = [user];  // populateTable usa un array de objetos como argumento
